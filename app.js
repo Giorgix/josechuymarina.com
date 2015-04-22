@@ -35,6 +35,7 @@ var adminRoutes = require('./routes/admin');
 i18n.configure({
   locales: ['es'],
   updateFiles: false,
+  defaultLocale: 'es',
   cookie: 'locale',
   directory: __dirname + '/locales'
 });

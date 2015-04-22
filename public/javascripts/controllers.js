@@ -39,7 +39,7 @@ weddingAppControllers.controller('rsvpCtrl', ['$scope', '$http', 'rsvpStorage','
           assist: $scope.assistChoice,
           busChoice: $scope.busChoice,
           kidsNumber: $scope.kidsNumber,
-          alergies: $scope.alergies
+          alergies: $scope.alergies.trim()
         };
         console.log($scope.email);
         if($scope.email && $scope.email != '') {
