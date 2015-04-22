@@ -1,0 +1,20 @@
+<div class="well">
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon"> Filter</div>
+      <input class="form-control" ng-model="query">
+    </div>
+  </div>
+  <h3> advice</h3>
+  <div ng-repeat="advice in adviceList | filter:query | orderBy: '-created'">
+    <h3 class="text-primary advice-name">{{advice.name}}</h5>
+    <p class="text-muted advice-content">{{advice.content}}</p>
+    <div ng-show="advice.image">
+      <img ng-src="{{advice.image}}" class="img-responsive">
+    </div>
+    <label class="btn btn-success" ng-model="advice.aproved" btn-radio="true" ng-change="saveEditedAdvice(advice)"> Aprove</label>
+    <label class="btn btn-danger" ng-model="advice.aproved" btn-radio="false" ng-change="saveEditedAdvice(advice)"> Deny</label>
+    <button class="btn btn-danger" ng-click="removeAdvice(advice._id)"> Delete</button>
+    <hr>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="well">
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon"> Filter</div>
+      <input class="form-control" ng-model="query">
+    </div>
+  </div>
+  <h3> Songs</h3>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <tr class="text-muted">
+        <th><a href="" ng-click="sortField = 'name' ; reverse = !reverse"> Name</a></th>
+        <th><a href="" ng-click="sortField = 'artist' ; reverse = !reverse"> Artist</a></th>
+        <th> Title</th>
+        <th></th>
+      </tr>
+      <tr class="text-muted" ng-repeat="song in filtered = (musicList | filter:query | orderBy:sortField:reverse) track by $index">
+        <td> {{song.name}}</td>
+        <td> {{song.artist}}</td>
+        <td> {{song.title}}</td>
+        <td> <button class="btn btn-danger" ng-click="removeSong(song._id)"> Delete</td>
+      </tr>
+    </table>
+  </div>
+</div>

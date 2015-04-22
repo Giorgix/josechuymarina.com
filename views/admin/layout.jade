@@ -1,0 +1,44 @@
+doctype html
+html(ng-app="weddingApp")
+  head
+    meta(http-equiv="content-type" content="text/html;charset=utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Jamie and Jorge | Wedding website
+    // Bootstrap Core CSS
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')
+    // Custom CSS
+    link(href='/stylesheets/style.css', rel='stylesheet')
+    // Custom Fonts
+    link(href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Slabo+27px:400,700', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Lato:400,700', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css')
+    //link(href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic', rel='stylesheet', type='text/css')
+    //link(href='http://fonts.googleapis.com/css?family=Montserrat:400,700', rel='stylesheet', type='text/css')
+    // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+      |         
+      script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+  body#page-top(data-spy='scroll', data-target='.navbar-fixed-top')
+    block content
+    // Angular
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.7/angular.min.js')
+    script(src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular-route.min.js')
+    script(src='/javascripts/angular-flash.min.js')
+    script(src='/javascripts/angular-file-upload-shim.min.js')
+    script(src='/javascripts/angular-file-upload.min.js')
+    script(src='/javascripts/adminApp.js')
+    script(src="javascripts/appRoutes.js")
+    script(src='/javascripts/controllers.js')
+    script(src='/javascripts/services.js')
+    // Bootstrap Core JavaScript
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap.min.js')
+    // jQuery
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js')
+    // Plugin JavaScript
+    // Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/

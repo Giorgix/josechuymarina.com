@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  div.container
+    div.col-sm-6.col-sm-offset-3
+      h1
+        span.fa.fa-sign-in
+        | Signup
+      if(message.length > 0)
+        div.alert.alert-danger #{message}
+      form(action="/admin/signup" method="post")
+        div.form-group
+          label Email
+          input.form-control(type="text" name="email")
+        div.form-group
+          label Password
+          input.form-control(type="password" name="password")
+        button.btn.btn-success.btn-large Signup
+        
+      hr
+      p Already have an account? 
+        a(href="/admin/login") Login
