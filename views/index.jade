@@ -26,6 +26,8 @@ block content
           li
             a.page-scroll(href='#accommodations')= __("accommodations")
           li
+            a.page-scroll(href='#honeymoon')= __("honeymoon")
+          li
             a.page-scroll(href='#advice')= __("advice")
           li
             a.page-scroll(href='#contact')= __("contact")
@@ -66,7 +68,8 @@ block content
   section#rsvp.container-fluid.content-section.text-center(ng-controller="rsvpCtrl")
         .col-lg-8.col-lg-offset-2(data-sr="enter top and scale up 30% over 1.5s")
           h2= __("rsvp")
-          span.section-icon.rsvp-icon(aria-hidden="true" data-icon!="&#xe602;")
+          img.advice-image(src="images/tarta.svg")
+          //span.section-icon.rsvp-icon(aria-hidden="true" data-icon!="&#xe602;")
           h3!= __("rsvp request")
           form(novalidate accessibleForm ng-submit="addRsvp(rsvpForm)" name="rsvpForm")
             div.form-group.col-xs-12.col-sm-12
@@ -134,28 +137,43 @@ block content
         h2= __("accommodations")
         span.section-icon.accommodations-icon(aria-hidden="true" data-icon!="&#xe604;")
         h4= __("accommodations info")
-        div.col-md-4.col-md-offset-2
-          a(href="http://booking.com/755293ba026a6")
+        div.col-md-4
+          a(href="http://www.booking.com/hotel/es/abbamadrid.html")
             div.panel.panel-accommodations.card
               div.panel-heading
-                h3.panel-title Hospederia Princesa Elima
+                h3.panel-title Hotel Abba Madrid Avda. América
               div.panel-body
                 div.mb
-                  img.img-responsive(src="images/hospederia.jpg")
+                  img.img-responsive(src="images/hotel-abba.jpg")
                 div.mb
                   button.btn.btn-success= __("booking")
         div.col-md-4
-          a(href="tel:949280300")
+          a(href="http://www.booking.com/hotel/es/acavenidadeamerica.html")
             div.panel.panel-accommodations.card
               div.panel-heading
-                h3.panel-title Hostal El Torreon
+                h3.panel-title AC Hotel Avda. de América
               div.panel-body
                 div.mb
-                  img.img-responsive(src="images/hostal.jpg")
+                  img.img-responsive(src="images/hotel-ac.jpg")
                 div.mb
-                  button.btn.btn-success 949 28 03 00
+                  button.btn.btn-success= __("booking")
+        div.col-md-4
+          a(href="http://www.booking.com/hotel/es/eurostars-madrid.html")
+            div.panel.panel-accommodations.card
+              div.panel-heading
+                h3.panel-title Hotel Exe Puerta Castilla
+              div.panel-body
+                div.mb
+                  img.img-responsive(src="images/hotel-exe.jpg")
+                div.mb
+                  button.btn.btn-success= __("booking")
 
-
+  section#honeymoon.container-fluid.content-section.text-center(ng-controller="musicCtrl")
+      .col-lg-8.col-lg-offset-2(data-sr="hustle 20% over 1.5s")
+        h2= __("honeymoon")
+        span.section-icon.music-icon(aria-hidden="true" data-icon!="&#xe603;")
+        h3= __("honeymoon info")
+        h4 XXXX XXXX XX XXXXXXXXX
 
 
 
@@ -163,7 +181,7 @@ block content
   section#advice.container-fluid.content-section.text-center(ng-controller="adviceCtrl")
       .col-lg-8.col-lg-offset-2(data-sr="enter bottom and scale up 30% over 1.5s")
         h2= __("advice title")
-        img.advice-image(src="images/novios.svg")
+        img.advice-image(src="images/besitos.svg")
         hr
         div(ng-repeat="advice in adviceList | orderBy: '-created' | limitTo:limit" ng-show="advice.aproved")
           div.panel-heading
@@ -210,76 +228,28 @@ block content
                   button.btn.btn-info.btn-lg.btn-block.card(ng-click= "langu = 'es'" type="submit")= __("send")
 
 
-  //section#music.container-fluid.content-section.text-center(ng-controller="musicCtrl")
-      .col-lg-8.col-lg-offset-2(data-sr="hustle 20% over 1.5s")
-        h2= __("music")
-        span.section-icon.music-icon(aria-hidden="true" data-icon!="&#xe603;")
-        h3= __("music info")
-        div
-          div.col-md-12(ng-repeat="song in musicList | orderBy: '-created' | limitTo:limit")
-            div.panel.panel-music.card
-              div.panel-heading
-                h3.panel-title {{song.artist}} 
-              div.panel-body 
-                div {{song.title}}
-                div.song-video.col-md-8.col-md-offset-2(ng-show="song.videoID")
-                  div.embed-responsive.embed-responsive-16by9
-                    youtube-video(video-id="song.videoID")
-              div.panel-footer 
-                small= __("recommended")
-                | {{song.name}}
-          div(ng-show="musicList.length > limit").col-md-12
-            button.btn.btn-default.card(ng-click= "limit = limit + 3")= __("see more")
-        div.advice-form.col-md-12
-            h4= __("request a song")
-            form(ng-submit="addSong(musicForm)" name="musicForm" novalidate)
-              div.form-group.col-xs-12.col-sm-12
-                div.col-xs-12.col-sm-8.col-md-offset-2
-                  input.form-control.input-lg(type="text" placeholder=__("name") ng-model="name" name="musicName" required)
-                  div(ng-show="musicForm.$submitted || musicForm.musicName.$touched")
-                    div.val-error(ng-show="musicForm.musicName.$error.required")= __("name val")
-              div.form-group.col-xs-12.col-sm-12
-                div.col-xs-12.col-sm-8.col-md-offset-2
-                  input.form-control.input-lg(type="text" placeholder=__("artist") ng-model="artist" name="musicArtist" required)
-                  div(ng-show="musicForm.$submitted || musicForm.musicArtist.$touched")
-                    div.val-error(ng-show="musicForm.musicArtist.$error.required")= __("artist val")
-              div.form-group.col-xs-12.col-sm-12.mb
-                div.col-xs-12.col-sm-8.col-md-offset-2
-                  input.form-control.input-lg(type="text" placeholder=__("song title") ng-model="title" name="musicSong" required)
-                  div.val-error(ng-show="musicForm.$submitted || musicForm.musicSong.$touched")
-                    div(ng-show="musicForm.musicSong.$error.required")= __("song val")
-              div.form-group.col-xs-12.col-sm-12.mb
-                div.col-xs-12.col-sm-8.col-md-offset-2
-                  label= __("video label")
-                  input.form-control.input-lg(type="text" placeholder=__("video url") ng-model="videoUrl")
-
-              div.form-group.col-xs-12.col-sm-12
-                div(id="music-msg" flash-alert active-class="in alert" class="fade")
-                  strong(class="alert-message") {{flash.message}}
-                div.col-sm-4.col-sm-offset-4
-                  - if(getLocale() === 'en')
-                    button.btn.btn-primary.btn-lg.btn-block.card(ng-click= "langu = 'en'" type="submit")= __("send")
-                  - if(getLocale() === 'es')
-                    button.btn.btn-primary.btn-lg.btn-block.card(ng-click= "langu = 'es'" type="submit")= __("send")
-
-
-
+  
   // Contact Section
   section#contact.intro.container-fluid.content-section.text-center
       .intro-body
         .col-lg-8.col-lg-offset-2(data-sr="scale down 20% over 1.5s")
           h2= __("contact title")
           h4= __("contact text")
-          - if(getLocale() === 'en')
-            p
-              a(href='mailto:wedding@jamieandjorge.com') wedding@jamieandjorge.com
-          - if(getLocale() === 'es')
-            p
-              a(href='mailto:boda@jamieandjorge.com') boda@jamieandjorge.com
-          ul.list-inline.banner-social-buttons
+          ul.banner-social-buttons
             li
-
-              a.btn.btn-default.btn-lg.card(href='tel:620374968')
+              h4
+                strong Josechu de Bonis 
+              a.btn.btn-default.btn-lg.card.mb(href='tel:665105358')
                 i.fa.fa-phone.fa-fw
                 |  
-                span.network-name 620374968
+                span.network-name 665105358
+            li
+              h4
+                strong Marina de Luna
+              a.btn.btn-default.btn-lg.card.mb(href='tel:606568233')
+                i.fa.fa-phone.fa-fw
+                |  
+                span.network-name 606568233
+          p
+            a(href='mailto:josechuymarina@gmail.com') josechuymarina@gmail.com
+

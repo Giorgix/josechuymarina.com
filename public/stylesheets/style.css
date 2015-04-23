@@ -214,6 +214,15 @@ a:focus {
     background-size: contain;
     -o-background-size: contain;
 }
+/*.intro:after {
+  display: block;
+  top: 0;
+  left: 0;
+  position:absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}*/
 
 .intro .intro-body {
     display: table-cell;
@@ -408,7 +417,10 @@ a:focus {
 }
 
 ul.banner-social-buttons {
+    padding: 0;
     margin-top: 0;
+    margin-left: 0;
+    list-style: none;
 }
 
 @media(max-width:1199px) {
@@ -550,6 +562,7 @@ body {
 }
 .advice-image {
   margin-bottom: 35px;
+  max-height: 300px;
 }
 #advice h4 {
   color: #CCCCCC;

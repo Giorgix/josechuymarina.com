@@ -28,10 +28,6 @@ db.once('open', function callback() {
   console.log('Connected to DB: ' + dbURL);
 })
 
-var routes = require('./routes/index');
-var apiRoutes = require('./routes/api');
-var adminRoutes = require('./routes/admin');
-
 i18n.configure({
   locales: ['es'],
   updateFiles: false,
@@ -41,6 +37,10 @@ i18n.configure({
 });
 
 var app = express();
+
+var routes = require('./routes/index');
+var apiRoutes = require('./routes/api');
+var adminRoutes = require('./routes/admin');
 
 app.use(multer({dest: './public/uploads/'}));
 
