@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var multer = require('multer');
 var methodOverride = require('method-override');
 var i18n = require('i18n');
-var RedisStore = require('connect-redis')(session);
+var MongoStore = require('connect-mongo')(session);
 var mongoose = require('mongoose');
 var flash = require('connect-flash');
 
@@ -54,15 +54,15 @@ app.set('view engine', 'jade');
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
-app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(i18n.init);
 
+app.use(cookieParser());
 app.use(session({ 
-  store: new RedisStore,
+  store: new MongoStore({url: dbURL}),
   secret: '0GISGOBWxz9iNcpXLgsQ@#$',
   cookie: {
     maxAge: 100*60*60
