@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var multer = require('multer');
 var methodOverride = require('method-override');
 var i18n = require('i18n');
+var RedisStore = require('connect-redis')(session);
 var mongoose = require('mongoose');
 var flash = require('connect-flash');
 
@@ -15,7 +16,7 @@ var configDB = require('./config/db.js');
 var dbURL;
 var env = process.env.NODE_ENV || 'development';
 if(env == 'development') {
-  dbURL = configDB.url;
+  dbURL = configDB.urlDev;
 } else if(env == 'production') {
   dbURL = configDB.url;
 }
@@ -60,8 +61,13 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(i18n.init);
 
-app.use(session({
+app.use(session({ 
+  store: new RedisStore,
   secret: '0GISGOBWxz9iNcpXLgsQ@#$',
+  cookie: {
+    maxAge: 100*60*60
+  },
+  rolling: true,
   resave: false,
   saveUninitialized: true
 }));
