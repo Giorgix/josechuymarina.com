@@ -9,19 +9,23 @@
   <div class="table-responsive">
     <table class="table table-striped">
       <tr class="text-muted">
-        <th><a href="" ng-click="sortField = 'firstName' ; reverse = !reverse"> First Name</a></th>
-        <th><a href="" ng-click="sortField = 'lastName' ; reverse = !reverse"> Last Name</a></th>
+        <th><a href="" ng-click="sortField = 'firstName' ; reverse = !reverse">Nombre</a></th>
+        <th><a href="" ng-click="sortField = 'lastName' ; reverse = !reverse">Apellido</a></th>
         <th> Email</th>
-        <th> Assist</th>
-        <th><a href="" ng-click="sortField = 'sleepPref' ; reverse = !reverse">Sleep Pref</a></th>
+        <th><a href="" ng-click="sortField = 'assist' ; reverse = !reverse">Asiste</a></th>
+        <th><a href="" ng-click="sortField = 'busChoice' ; reverse = !reverse">Autobus</a></th>
+        <th><a href="" ng-click="sortField = 'kidsNumber' ; reverse = !reverse">Niños</a></th>
+        <th><a href="" ng-click="sortField = 'alergies' ; reverse = !reverse">Alergias</a></th>
       </tr>
       <tr class="text-muted" ng-repeat="rsvp in filtered = (rsvps | filter:query | orderBy:sortField:reverse) track by $index">
         <td> {{rsvp.firstName}}</td>
         <td> {{rsvp.lastName}}</td>
         <td> {{rsvp.email}}</td>
-        <td ng-show="{{rsvp.assist}}"> YES</td>
-        <td ng-hide="{{rsvp.assist}}"> NO</td>
-        <td> {{rsvp.sleepPref}}</td>
+        <td ng-show="{{rsvp.assist == true}}"> SI</td>
+        <td ng-show="{{rsvp.assist == false}}"> NO</td>
+        <td> {{rsvp.busChoice}}</td>
+        <td> {{rsvp.kidsNumber}}</td>
+        <td> {{rsvp.alergies}}</td>
         <td> <button class="btn btn-danger" ng-click="removeRsvp(rsvp._id)"> Delete</td>
       </tr>
     </table>
