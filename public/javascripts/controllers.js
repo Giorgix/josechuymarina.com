@@ -68,7 +68,32 @@ weddingAppControllers.controller('rsvpCtrl', ['$scope', '$http', 'rsvpStorage','
                       });
       }      
 
+      $scope.getTotalKids = function() {
+        var total = 0;
+        for(var i = 0; i < $scope.rsvps.length; i++){
+          var kidsNumber = $scope.rsvps[i].kidsNumber;
+          total += kidsNumber;
+        }
+        return total; 
+      }
       
+      $scope.getTotalAssist = function() {
+        var total = 0;
+        for(var i = 0; i < $scope.rsvps.length; i++){
+          if($scope.rsvps[i].assist == true) total += 1;
+        }
+        return total; 
+      }
+      
+      $scope.getTotalNoAssist = function() {
+        var total = 0;
+        for(var i = 0; i < $scope.rsvps.length; i++){
+          if($scope.rsvps[i].assist == false) total += 1;
+        }
+        return total; 
+      }
+
+
       $scope.removeRsvp = function(itemId) {
         rsvpStorage.delete(itemId)
                       .success(function(data) {

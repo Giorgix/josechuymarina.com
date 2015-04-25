@@ -5,7 +5,9 @@
       <input class="form-control" ng-model="query">
     </div>
   </div>
-  <h4 class="text-muted"> TOTAL: {{filtered.length}}</h4>
+  <h4 class="text-muted"> ASISTEN: {{getTotalAssist()}}</h4>
+  <h4 class="text-muted"> NO ASISTEN: {{getTotalNoAssist()}}</h4>
+  <h4 class="text-muted"> TOTAL NIÑOS: {{getTotalKids()}}</h4>
   <div class="table-responsive">
     <table class="table table-striped">
       <tr class="text-muted">
