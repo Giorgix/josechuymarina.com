@@ -53,9 +53,6 @@ block content
           span.section-icon.date-icon(aria-hidden="true" data-icon!="&#xe601;")
         h3= __("wedding hour")
         address
-          div.btn-link
-            a(href="http://www.lapenabermeja.com")
-              div.btn.btn-default.btn-lg.card!= __("wedding place")
           div= __("wedding address")
           div= __("wedding address 2")
         p= __("wedding description 1")
@@ -171,9 +168,22 @@ block content
   section#honeymoon.container-fluid.content-section.text-center(ng-controller="musicCtrl")
       .col-lg-8.col-lg-offset-2(data-sr="hustle 20% over 1.5s")
         h2= __("honeymoon")
-        span.section-icon.music-icon(aria-hidden="true" data-icon!="&#xe603;")
-        h3= __("honeymoon info")
-        h4 XXXX XXXX XX XXXXXXXXX
+        div.row
+          // make polaroid style with handwriting caption
+          div.col-md-2.col-md-offset-1.mb
+            img.img-responsive.polaroid(src="images/honolulu.jpg")
+          div.col-md-2.mb
+            img.img-responsive.polaroid(src="images/hawaii.jpg")
+          div.col-md-2.mb
+            img.img-responsive.polaroid(src="images/los-angeles.jpg")
+          div.col-md-2.mb
+            img.img-responsive.polaroid(src="images/san-francisco.jpg")
+          div.col-md-2.mb
+            img.img-responsive.polaroid(src="images/las-vegas.jpg")
+        div
+          h3= __("honeymoon info")
+          h4 Numero de cuenta: 
+            strong 1465 0100 96 2039491634
 
 
 
