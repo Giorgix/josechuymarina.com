@@ -563,6 +563,7 @@ body {
 .advice-image {
   margin-bottom: 35px;
   max-height: 300px;
+  width: 100%;
 }
 #advice h4 {
   color: #CCCCCC;
