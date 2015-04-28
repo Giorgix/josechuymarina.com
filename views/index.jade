@@ -50,10 +50,7 @@ block content
   section#about.container-fluid.content-section.text-center
     .col-lg-8.col-lg-offset-2(data-sr="enter left move 150px over 1s")
         h2= __("wedding info")
-        - if(getLocale() === 'en')
-          span.section-icon.date-icon(aria-hidden="true" data-icon!="&#xe600;")
-        - if(getLocale() === 'es')
-          span.section-icon.date-icon(aria-hidden="true" data-icon!="&#xe601;")
+        img.advice-image(src="images/date.svg")
         h3= __("wedding hour")
         address
           div= __("wedding address")

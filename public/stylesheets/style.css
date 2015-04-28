@@ -207,7 +207,7 @@ a:focus {
     padding: 100px 0;
     text-align: center;
     color: #1E1E1E;
-    /*background: url(/images/front.svg) no-repeat center center scroll;*/
+    background: url(/images/intro-bg.svg) no-repeat center 25% scroll;
     background-color: #FEFEFE;
     -webkit-background-size: contain;
     -moz-background-size: contain;
