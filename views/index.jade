@@ -38,11 +38,14 @@ block content
   header.intro
       .intro-body
         .container
-          .row
-            .col-md-8.col-md-offset-2
-              p.intro-text= __("intro text")
+          .row.mb
+            .col-md-8.vcenter
+              img.img-responsive.img-intro(src="images/front.svg")
+            .col-md-4.vcenter
+              h2.intro-text= __("intro text")
               a.btn.btn-circle.page-scroll(href='#about')
                 i.fa.fa-angle-double-down.animated
+  
   // About Section
   section#about.container-fluid.content-section.text-center
     .col-lg-8.col-lg-offset-2(data-sr="enter left move 150px over 1s")
@@ -170,19 +173,25 @@ block content
         h2= __("honeymoon")
         div.row
           // make polaroid style with handwriting caption
-          div.col-md-2.col-md-offset-1.mb
-            img.img-responsive.polaroid(src="images/honolulu.jpg")
-          div.col-md-2.mb
-            img.img-responsive.polaroid(src="images/hawaii.jpg")
-          div.col-md-2.mb
-            img.img-responsive.polaroid(src="images/los-angeles.jpg")
-          div.col-md-2.mb
-            img.img-responsive.polaroid(src="images/san-francisco.jpg")
-          div.col-md-2.mb
-            img.img-responsive.polaroid(src="images/las-vegas.jpg")
+          a(href="images/honolulu.jpg")
+            div.col-md-2.col-md-offset-1.mb
+              img.img-responsive.polaroid(src="images/honolulu.jpg")
+          a(href="images/hawaii.jpg")
+            div.col-md-2.mb
+              img.img-responsive.polaroid(src="images/hawaii.jpg")
+          a(href="images/los-angeles.jpg")
+            div.col-md-2.mb
+              img.img-responsive.polaroid(src="images/los-angeles.jpg")
+          a(href="images/san-francisco.jpg")
+            div.col-md-2.mb
+              img.img-responsive.polaroid(src="images/san-francisco.jpg")
+          a(href="images/las-vegas.jpg")
+            div.col-md-2.mb
+              img.img-responsive.polaroid(src="images/las-vegas.jpg")
         div
           h3= __("honeymoon info")
           h4 Numero de cuenta: 
+          h4
             strong 1465 0100 96 2039491634
 
 

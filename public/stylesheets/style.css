@@ -206,24 +206,24 @@ a:focus {
     height: auto;
     padding: 100px 0;
     text-align: center;
-    color: #fff;
-    background: url(/images/front.svg) no-repeat center center scroll;
+    color: #1E1E1E;
+    /*background: url(/images/front.svg) no-repeat center center scroll;*/
     background-color: #FEFEFE;
     -webkit-background-size: contain;
     -moz-background-size: contain;
     background-size: contain;
     -o-background-size: contain;
 }
-/*.intro:after {
-  display: block;
-  top: 0;
-  left: 0;
-  position:absolute;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-}*/
 
+.img-intro {
+  width: 100%;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
 .intro .intro-body {
     display: table-cell;
     vertical-align: middle;
@@ -257,10 +257,10 @@ a:focus {
     height: 70px;
     margin-top: 15px;
     padding: 7px 16px;
-    border: 2px solid #fff;
+    border: 2px solid #1E1E1E;
     border-radius: 35px;
     font-size: 40px;
-    color: #fff;
+    color: #1E1E1E;
     background: 0 0;
     -webkit-transition: background .3s ease-in-out;
     -moz-transition: background .3s ease-in-out;
@@ -270,7 +270,7 @@ a:focus {
 .btn-circle:hover,
 .btn-circle:focus {
     outline: 0;
-    color: #fff;
+    color: #CCCCCC;
     background: rgba(255,255,255,.1);
 }
 
